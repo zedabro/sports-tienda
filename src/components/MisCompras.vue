@@ -310,7 +310,7 @@ export default {
 
       try {
         const response = await axios.get(
-          "http://localhost:3306/api/auth/compras",
+          "https://back-wwpy.onrender.com/api/auth/compras",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -348,11 +348,14 @@ export default {
       const token = localStorage.getItem("token");
 
       try {
-        await axios.delete(`http://localhost:3306/api/pedidos/${id_pedido}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        await axios.delete(
+          `https://back-wwpy.onrender.com/api/pedidos/${id_pedido}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         Swal.fire({
           icon: "success",
           title: "Éxito",

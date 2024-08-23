@@ -79,7 +79,7 @@ export default {
     async handleSubmit() {
       try {
         const response = await fetch(
-          "http://localhost:3306/api/auth/register",
+          "https://back-wwpy.onrender.com/api/auth/register",
           {
             method: "POST",
             headers: {

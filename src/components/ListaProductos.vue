@@ -158,7 +158,7 @@ export default {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:3306/api/listaproductos",
+          "https://back-wwpy.onrender.com/api/listaproductos",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -185,7 +185,7 @@ export default {
       try {
         const token = localStorage.getItem("token");
         await axios.put(
-          `http://localhost:3306/api/productos/${this.productoActual.id_producto}`,
+          `https://back-wwpy.onrender.com/api/productos/${this.productoActual.id_producto}`,
           this.productoActual,
           {
             headers: {
@@ -234,7 +234,7 @@ export default {
       try {
         const token = localStorage.getItem("token");
         await axios.delete(
-          `http://localhost:3306/api/productos/${producto.id_producto}`,
+          `https://back-wwpy.onrender.com/productos/${producto.id_producto}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

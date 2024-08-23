@@ -115,7 +115,9 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get("http://localhost:3306/api/clientes");
+      const response = await axios.get(
+        "https://back-wwpy.onrender.com/api/clientes"
+      );
       this.clientes = response.data;
     } catch (error) {
       this.error = "Error al obtener los clientes";
@@ -126,7 +128,7 @@ export default {
     async verEstadoCuenta(idCliente) {
       try {
         const response = await axios.post(
-          `http://localhost:3306/estado-cuenta/${idCliente}`
+          `https://back-wwpy.onrender.com/estado-cuenta/${idCliente}`
         );
         console.log("Respuesta de la API:", response.data);
         this.estadoCuenta = Array.isArray(response.data) ? response.data : [];

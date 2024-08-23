@@ -37,7 +37,7 @@ export default {
       try {
         console.log(`Verificando con el token: ${token}`);
         const response = await fetch(
-          `http://localhost:3306/api/auth/verify-email?token=${token}`
+          `https://back-wwpy.onrender.com/api/auth/verify-email?token=${token}`
         );
         console.log("Respuesta del servidor:", response);
 

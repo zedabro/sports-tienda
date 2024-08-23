@@ -132,11 +132,14 @@ export default {
     async fetchPedidos() {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:3306/api/pedidos", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://back-wwpy.onrender.com/api/pedidos",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         this.pedidos = response.data;
       } catch (error) {
         console.error("Error al obtener los pedidos:", error);
@@ -175,7 +178,7 @@ export default {
       try {
         const token = localStorage.getItem("token");
         await axios.put(
-          `http://localhost:3306/api/pedidos/${idPedido}/entregar`,
+          `https://back-wwpy.onrender.com/api/pedidos/${idPedido}/entregar`,
           {},
           {
             headers: {
@@ -214,11 +217,14 @@ export default {
 
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:3306/api/pedidos/${idPedido}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        await axios.delete(
+          `https://back-wwpy.onrender.com/api/pedidos/${idPedido}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         this.fetchPedidos();
         Swal.fire({
           icon: "success",

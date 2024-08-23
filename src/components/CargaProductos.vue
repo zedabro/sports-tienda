@@ -117,7 +117,7 @@ export default {
     async fetchCategorias() {
       try {
         const response = await axios.get(
-          "http://localhost:3306/api/categorias"
+          "https://back-wwpy.onrender.com/api/categorias"
         );
         this.categorias = response.data;
       } catch (error) {
@@ -127,7 +127,7 @@ export default {
     async fetchSubcategorias() {
       try {
         const response = await axios.get(
-          `http://localhost:3306/api/subcategorias/${this.selectedCategoria}`
+          `https://back-wwpy.onrender.com/api/subcategorias/${this.selectedCategoria}`
         );
         this.subcategorias = response.data;
       } catch (error) {
@@ -137,11 +137,15 @@ export default {
     async submitForm() {
       try {
         const token = localStorage.getItem("token");
-        await axios.post("http://localhost:3306/api/productos", this.producto, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        await axios.post(
+          "https://back-wwpy.onrender.com/api/productos",
+          this.producto,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         Swal.fire({
           icon: "success",
           title: "Producto Cargado",
